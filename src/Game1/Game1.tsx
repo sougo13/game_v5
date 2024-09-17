@@ -7,10 +7,11 @@ import okPapug from "../assets/okPapug.webp";
 import neOkPapug from "../assets/neOkPapug.webp";
 import { ElemType, getElements, TElemType } from "./const";
 import { Grid, GridItem } from "../Grid/Grid";
-import { Context, Status } from "../Context";
+import { Context } from "../Context";
+import { Status } from "../types";
 
 export const Game1 = () => {
-  const { status, setStatus } = useContext(Context);
+  const { status, setStatus, onClickAudio } = useContext(Context);
 
   const [stage, setStage] = useState<number>(0);
   const [selectedItems, setSelectedItems] = useState<number[]>([]);
@@ -23,6 +24,7 @@ export const Game1 = () => {
   const elements: TElemType[] = useMemo(() => getElements(stage), [stage]);
 
   const nextStageHandler = () => {
+    onClickAudio();
     setStage((prev) => prev + 1);
     setSelectedItems([]);
     setCorrectItems([]);
@@ -39,6 +41,7 @@ export const Game1 = () => {
     ];
 
     const itemClickHandler = (type: ElemType, index: number) => {
+      onClickAudio();
       setSelectedItems((prev) => [...prev, index]);
       if (isFirstStage && type === ElemType.veg) {
         setStatus(Status.correct);

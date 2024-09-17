@@ -4,7 +4,6 @@ import VolumeMute from "@mui/icons-material/VolumeOff";
 import Slider from "@mui/material/Slider";
 import { useContext } from "react";
 import bgAudioUrl from "./assets/audio/bgAudio.mp3";
-import clickAudioUrl from "./assets/audio/click.mp3";
 import goToMenu from "./assets/goToMenu.webp";
 import { Context } from "./Context";
 import "./styles/App.css";
@@ -16,8 +15,6 @@ bgAudio.autoplay = true;
 bgAudio.volume = 0.1;
 bgAudio.preload = "auto";
 
-const clickAudio = new Audio(clickAudioUrl);
-
 function App() {
   const {
     currentPage,
@@ -26,6 +23,7 @@ function App() {
     prevVolume,
     currentPageIndex,
     setVolume,
+    onClickAudio,
   } = useContext(Context);
 
   bgAudio.volume = volume / 100;
@@ -35,7 +33,7 @@ function App() {
   };
 
   const onClickHandler = () => {
-    clickAudio.play();
+    onClickAudio();
     bgAudio.play();
     setCurrentPage(1);
   };

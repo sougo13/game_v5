@@ -1,28 +1,19 @@
 import { createContext, FC, useRef, useState } from "react";
-import { StartPage } from "./StartPage/StartPage";
-import { Menu } from "./Menu/Menu";
 import { Game1 } from "./Game1/Game1";
 import { Game2 } from "./Game2/Game2";
 import { Game3 } from "./Game3/Game3";
 import { Game4 } from "./Game4/Game4";
 import { Game5 } from "./Game5/Game5";
+import { Menu } from "./Menu/Menu";
+import { StartPage } from "./StartPage/StartPage";
+import clickAudioUrl from "./assets/audio/click.mp3";
+import wrongAudioUrl from "./assets/audio/wrongAudio.mp3";
+import correctAudioUrl from "./assets/audio/correctAudio.mp3";
+import { Status, TContext } from "./types";
 
-export enum Status {
-  whait,
-  correct,
-  wrong,
-}
-
-export type TContext = {
-  currentPage: JSX.Element;
-  currentPageIndex: number;
-  setCurrentPage: (newPage: number) => void;
-  volume: number;
-  prevVolume: number;
-  setVolume: (newPage: number) => void;
-  status: Status;
-  setStatus: (newStatus: Status) => void;
-};
+const clickAudio: HTMLAudioElement = new Audio(clickAudioUrl);
+const wrongAudio: HTMLAudioElement = new Audio(wrongAudioUrl);
+const correctAudio: HTMLAudioElement = new Audio(correctAudioUrl);
 
 export const Context = createContext<TContext>({
   currentPage: <StartPage />,
@@ -33,6 +24,9 @@ export const Context = createContext<TContext>({
   setVolume: () => {},
   status: Status.whait,
   setStatus: () => {},
+  onClickAudio: () => {},
+  onWrongAudio: () => {},
+  onCorrectAudio: () => {},
 });
 
 const time = 3000;
@@ -52,6 +46,14 @@ export const ContextProvider: FC<{ children: JSX.Element }> = ({
   };
 
   const setStatusHandler = (newStatus: Status) => {
+    if (newStatus === Status.correct) {
+      correctAudio.currentTime = 0;
+      correctAudio.play();
+    }
+    if (newStatus === Status.wrong) {
+      wrongAudio.currentTime = 0;
+      wrongAudio.play();
+    }
     if (timer.current) {
       clearTimeout(timer.current);
     }
@@ -82,6 +84,15 @@ export const ContextProvider: FC<{ children: JSX.Element }> = ({
         setVolume: setVolumeHandler,
         status,
         setStatus: setStatusHandler,
+        onClickAudio: () => clickAudio.play(),
+        onCorrectAudio: () => {
+          correctAudio.currentTime = 0;
+          correctAudio.play();
+        },
+        onWrongAudio: () => {
+          wrongAudio.currentTime = 0;
+          wrongAudio.play();
+        },
       }}
     >
       {children}
