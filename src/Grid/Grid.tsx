@@ -16,7 +16,7 @@ type TGridItem = {
     rowStart: number;
     rowEnd: number;
   };
-  children?: JSX.Element;
+  children: React.ReactNode;
 };
 
 export const GridItem: FC<TGridItem> = (props) => {
