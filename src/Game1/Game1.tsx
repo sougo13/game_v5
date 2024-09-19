@@ -1,13 +1,13 @@
 import { useCallback, useContext, useMemo, useState } from "react";
 import "./Game1.css";
-import fruitsBasket from "../assets/Game1/fruits.webp";
-import vegetablesBasket from "../assets/Game1/vegetables.webp";
-import nextBtn from "../assets/next.webp";
+import fruitsBasket from "../assets/Game1/fru.png";
+import vegetablesBasket from "../assets/Game1/veg.png";
 import { ElemType, getElements, TElemType } from "./const";
 import { Grid, GridItem } from "../Grid/Grid";
 import { Context } from "../Context";
 import { Status } from "../types";
 import { PapugStatus } from "../PapugStatus/PapugStatus";
+import { NextButton } from "../NextButton/NextButton";
 
 export const Game1 = () => {
   const { setStatus, onClickAudio } = useContext(Context);
@@ -62,8 +62,8 @@ export const Game1 = () => {
             <img
               className={
                 selectedItems.includes(index)
-                  ? "checkedElement scale imgBorder"
-                  : "scale imgBorder"
+                  ? "checkedElement scale imgBorder noBorder"
+                  : "scale imgBorder noBorder"
               }
               src={src}
               onClick={() => itemClickHandler(type, index)}
@@ -90,19 +90,13 @@ export const Game1 = () => {
             <img src={basketImg} />
           </GridItem>
           <PapugStatus />
-          {stage < 3 && (
-            <GridItem
-              position={{ colStart: 10, colEnd: 13, rowStart: 3, rowEnd: 6 }}
-            >
-              <img src={nextBtn} onClick={nextStageHandler} />
-            </GridItem>
-          )}
+          {stage < 3 && <NextButton nextStageHandler={nextStageHandler} />}
           {renderElements()}
           {correctItems.map((itemIndex, index) => {
             const { src } = elements[itemIndex];
             return (
               <GridItem key={src} position={basketPositions[index]}>
-                <img src={src} className="imgBorder" />
+                <img src={src} className="imgBorder noBorder" />
               </GridItem>
             );
           })}

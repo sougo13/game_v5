@@ -1,11 +1,11 @@
 import { useContext, useState } from "react";
-import nextBtn from "../assets/next.webp";
 import { Context } from "../Context";
 import { Grid, GridItem } from "../Grid/Grid";
 import { Status } from "../types";
 import { photos } from "./const";
 import "./Game2.css";
 import { PapugStatus } from "../PapugStatus/PapugStatus";
+import { NextButton } from "../NextButton/NextButton";
 
 export const Game2 = () => {
   const { setStatus, onClickAudio } = useContext(Context);
@@ -14,10 +14,10 @@ export const Game2 = () => {
   const [checked, setChecked] = useState<boolean>(false);
 
   const positions = [
-    { colStart: 2, colEnd: 5, rowStart: 2, rowEnd: 5 },
-    { colStart: 6, colEnd: 9, rowStart: 2, rowEnd: 5 },
-    { colStart: 2, colEnd: 5, rowStart: 6, rowEnd: 10 },
-    { colStart: 6, colEnd: 9, rowStart: 6, rowEnd: 10 },
+    { colStart: 2, colEnd: 5, rowStart: 2, rowEnd: 6 },
+    { colStart: 6, colEnd: 9, rowStart: 2, rowEnd: 6 },
+    { colStart: 2, colEnd: 5, rowStart: 7, rowEnd: 11 },
+    { colStart: 6, colEnd: 9, rowStart: 7, rowEnd: 11 },
   ];
 
   const nextStageHandler = () => {
@@ -55,11 +55,7 @@ export const Game2 = () => {
           </GridItem>
         ))}
         {!!photos[stage + 1] && (
-          <GridItem
-            position={{ colStart: 10, colEnd: 13, rowStart: 3, rowEnd: 6 }}
-          >
-            <img src={nextBtn} onClick={nextStageHandler} />
-          </GridItem>
+          <NextButton nextStageHandler={nextStageHandler} />
         )}
         <PapugStatus />
       </Grid>

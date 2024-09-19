@@ -1,52 +1,52 @@
-import p1 from "../assets/Game2/1/1.webp";
-import p11 from "../assets/Game2/1/11.webp";
-import p111 from "../assets/Game2/1/111.webp";
-import p1111 from "../assets/Game2/1/1111.webp";
+import p1 from "../assets/Game2/1/1.png";
+import p11 from "../assets/Game2/1/11.png";
+import p111 from "../assets/Game2/1/111.png";
+import p1111 from "../assets/Game2/1/1111.png";
 
-import p2 from "../assets/Game2/2/2.webp";
-import p22 from "../assets/Game2/2/22.webp";
-import p222 from "../assets/Game2/2/222.webp";
-import p2222 from "../assets/Game2/2/2222.webp";
+import p2 from "../assets/Game2/2/2.png";
+import p22 from "../assets/Game2/2/22.png";
+import p222 from "../assets/Game2/2/222.png";
+import p2222 from "../assets/Game2/2/2222.png";
 
-import p3 from "../assets/Game2/3/3.webp";
-import p33 from "../assets/Game2/3/33.webp";
-import p333 from "../assets/Game2/3/333.webp";
-import p3333 from "../assets/Game2/3/3333.webp";
+import p3 from "../assets/Game2/3/3.png";
+import p33 from "../assets/Game2/3/33.png";
+import p333 from "../assets/Game2/3/333.png";
+import p3333 from "../assets/Game2/3/3333.png";
 
-import p4 from "../assets/Game2/4/4.webp";
-import p44 from "../assets/Game2/4/44.webp";
-import p444 from "../assets/Game2/4/444.webp";
-import p4444 from "../assets/Game2/4/4444.webp";
+import p4 from "../assets/Game2/4/4.png";
+import p44 from "../assets/Game2/4/44.png";
+import p444 from "../assets/Game2/4/444.png";
+import p4444 from "../assets/Game2/4/4444.png";
 
-import p5 from "../assets/Game2/5/5.webp";
-import p55 from "../assets/Game2/5/55.webp";
-import p555 from "../assets/Game2/5/555.webp";
-import p5555 from "../assets/Game2/5/5555.webp";
+import p5 from "../assets/Game2/5/5.png";
+import p55 from "../assets/Game2/5/55.png";
+import p555 from "../assets/Game2/5/555.png";
+import p5555 from "../assets/Game2/5/5555.png";
 
-import p6 from "../assets/Game2/6/6.webp";
-import p66 from "../assets/Game2/6/66.webp";
-import p666 from "../assets/Game2/6/666.webp";
-import p6666 from "../assets/Game2/6/6666.webp";
+import p6 from "../assets/Game2/6/6.png";
+import p66 from "../assets/Game2/6/66.png";
+import p666 from "../assets/Game2/6/666.png";
+import p6666 from "../assets/Game2/6/6666.png";
 
-import p7 from "../assets/Game2/7/7.webp";
-import p77 from "../assets/Game2/7/77.webp";
-import p777 from "../assets/Game2/7/777.webp";
-import p7777 from "../assets/Game2/7/7777.webp";
+import p7 from "../assets/Game2/7/7.png";
+import p77 from "../assets/Game2/7/77.png";
+import p777 from "../assets/Game2/7/777.png";
+import p7777 from "../assets/Game2/7/7777.png";
 
-import p8 from "../assets/Game2/8/8.webp";
-import p88 from "../assets/Game2/8/88.webp";
-import p888 from "../assets/Game2/8/888.webp";
-import p8888 from "../assets/Game2/8/8888.webp";
+import p8 from "../assets/Game2/8/8.png";
+import p88 from "../assets/Game2/8/88.png";
+import p888 from "../assets/Game2/8/888.png";
+import p8888 from "../assets/Game2/8/8888.png";
 
-import p9 from "../assets/Game2/9/9.webp";
-import p99 from "../assets/Game2/9/99.webp";
-import p999 from "../assets/Game2/9/999.webp";
-import p9999 from "../assets/Game2/9/9999.webp";
+import p9 from "../assets/Game2/9/9.png";
+import p99 from "../assets/Game2/9/99.png";
+import p999 from "../assets/Game2/9/999.png";
+import p9999 from "../assets/Game2/9/9999.png";
 
-import p10 from "../assets/Game2/10/10.webp";
-import p1010 from "../assets/Game2/10/1010.webp";
-import p101010 from "../assets/Game2/10/101010.webp";
-import p10101010 from "../assets/Game2/10/10101010.webp";
+import p10 from "../assets/Game2/10/10.png";
+import p1010 from "../assets/Game2/10/1010.png";
+import p101010 from "../assets/Game2/10/101010.png";
+import p10101010 from "../assets/Game2/10/10101010.png";
 
 export const photos = [
   [

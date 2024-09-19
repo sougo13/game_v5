@@ -81,7 +81,7 @@ p.speech:after {
   font-size: 36px;
   box-shadow: 0px 0px 14px -7px #f09819;
   background-image: linear-gradient(45deg, #FF512F 0%, #F09819 51%, #FF512F 100%);
-  cursor: pointer;
+  cursor: url('../assets/cursorPointer.png'), pointer;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
@@ -107,30 +107,37 @@ p.speech:after {
   max-width: 300px;
   align-items: center;
   z-index: 1000;
+  cursor: url('../assets/cursorPointer.png'), pointer !important;
 }
 
 .volumeButton {
   display: flex;
-  cursor: pointer;
   margin-right: 20px;
+  cursor: url('../assets/cursorPointer.png'), pointer !important;
 
   svg {
     height: 40px;
     width: 40px;
     color: #f09819;
+    cursor: url('../assets/cursorPointer.png'), pointer !important;
   }
 }
 
 .slider {
   color: rgb(255 172 122) !important;
   height: 10px !important;
+  cursor: url('../assets/cursorPointer.png'), pointer !important;
+
+  * {
+    cursor: url('../assets/cursorPointer.png'), pointer !important;
+  }
 
   .MuiSlider-thumb {
     color: #ffdd4a00 !important;
     width: 40px;
     height: 40px;
     background-size: contain;
-    background-image: url('../assets/wheel.png');
+    background-image: url('../assets/wheel.png') !important;
     box-shadow: none !important;
   }
 }
@@ -143,7 +150,7 @@ p.speech:after {
   margin-top: 20px;
   width: 150px;
   height: 150px;
-  cursor: pointer;
+  cursor: url('../assets/cursorPointer.png'), pointer;
   z-index: 1000;
 }
 

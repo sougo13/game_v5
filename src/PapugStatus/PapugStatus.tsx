@@ -2,8 +2,8 @@ import React, { useContext } from "react";
 import { GridItem } from "../Grid/Grid";
 import { Status } from "../types";
 import { Context } from "../Context";
-import okPapug from "../assets/okPapug.webp";
-import neOkPapug from "../assets/neOkPapug.webp";
+import okPapug from "../assets/okPapug.png";
+import neOkPapug from "../assets/neOkPapug.png";
 import "./PapugStatus.css";
 
 export const PapugStatus = () => {

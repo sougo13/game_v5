@@ -28,7 +28,7 @@ h6 {
 
 * {
   font-family: cursive;
-  cursor: url('../assets/react.svg'), default;
+  cursor: url('../assets/cursorDefault.png'), default;
 }
 
 h1,
@@ -64,7 +64,8 @@ html {
 
 img,
 video {
-  width: 100%;
+  width: auto;
+  max-width: 100%;
   height: 100%;
   object-fit: contain;
   user-drag: none;
@@ -87,9 +88,18 @@ th {
 }
 
 .imgBorder {
-  object-fit: fill;
+  object-fit: contain;
   border-radius: 20px;
   border: 5px solid #efb159c9;
+  cursor: url('../assets/cursorPointer.png'), pointer;
+}
+
+.pointer {
+  cursor: url('../assets/cursorPointer.png'), pointer;
+}
+
+.noBorder {
+  border: none;
 }
 
 .scale {

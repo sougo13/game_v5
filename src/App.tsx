@@ -4,7 +4,7 @@ import VolumeMute from "@mui/icons-material/VolumeOff";
 import Slider from "@mui/material/Slider";
 import { useContext } from "react";
 import bgAudioUrl from "./assets/audio/bgAudio.mp3";
-import goToMenu from "./assets/goToMenu.webp";
+import goToMenu from "./assets/goToMenu.png";
 import { Context } from "./Context";
 import "./styles/App.css";
 import "./styles/MainPage.css";

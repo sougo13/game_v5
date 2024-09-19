@@ -5,3 +5,8 @@
   align-items: center;
   justify-content: center;
 }
+
+.hidden {
+  background-color: #efb159c9;
+  width: 100%;
+}

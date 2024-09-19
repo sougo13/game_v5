@@ -11,7 +11,7 @@
 .menuItem {
   color: white;
   font-size: 36px;
-  cursor: pointer;
+    cursor: url('../assets/cursorPointer.png'), pointer;
   width: 200px;
   background-color: orange;
   border-radius: 10px;
