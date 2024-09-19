@@ -3,15 +3,14 @@ import "./Game1.css";
 import fruitsBasket from "../assets/Game1/fruits.webp";
 import vegetablesBasket from "../assets/Game1/vegetables.webp";
 import nextBtn from "../assets/next.webp";
-import okPapug from "../assets/okPapug.webp";
-import neOkPapug from "../assets/neOkPapug.webp";
 import { ElemType, getElements, TElemType } from "./const";
 import { Grid, GridItem } from "../Grid/Grid";
 import { Context } from "../Context";
 import { Status } from "../types";
+import { PapugStatus } from "../PapugStatus/PapugStatus";
 
 export const Game1 = () => {
-  const { status, setStatus, onClickAudio } = useContext(Context);
+  const { setStatus, onClickAudio } = useContext(Context);
 
   const [stage, setStage] = useState<number>(0);
   const [selectedItems, setSelectedItems] = useState<number[]>([]);
@@ -33,11 +32,11 @@ export const Game1 = () => {
 
   const renderElements = useCallback(() => {
     const positions = [
-      { colStart: 1, colEnd: 4, rowStart: 1, rowEnd: 4 },
-      { colStart: 4, colEnd: 7, rowStart: 4, rowEnd: 7 },
-      { colStart: 5, colEnd: 8, rowStart: 1, rowEnd: 4 },
-      { colStart: 7, colEnd: 10, rowStart: 5, rowEnd: 8 },
-      { colStart: 1, colEnd: 4, rowStart: 5, rowEnd: 8 },
+      { colStart: 2, colEnd: 4, rowStart: 1, rowEnd: 4 },
+      { colStart: 4, colEnd: 6, rowStart: 4, rowEnd: 7 },
+      { colStart: 6, colEnd: 8, rowStart: 1, rowEnd: 4 },
+      { colStart: 8, colEnd: 10, rowStart: 5, rowEnd: 8 },
+      { colStart: 1, colEnd: 3, rowStart: 5, rowEnd: 8 },
     ];
 
     const itemClickHandler = (type: ElemType, index: number) => {
@@ -61,7 +60,11 @@ export const Game1 = () => {
         {elements.map(({ src, type }, index) => (
           <GridItem key={index} position={positions[index]}>
             <img
-              className={selectedItems.includes(index) ? "checkedElement" : ""}
+              className={
+                selectedItems.includes(index)
+                  ? "checkedElement scale imgBorder"
+                  : "scale imgBorder"
+              }
               src={src}
               onClick={() => itemClickHandler(type, index)}
             />
@@ -86,16 +89,7 @@ export const Game1 = () => {
           >
             <img src={basketImg} />
           </GridItem>
-          <GridItem
-            position={{ colStart: 10, colEnd: 13, rowStart: 6, rowEnd: 13 }}
-          >
-            {status === Status.correct && (
-              <img className="papugStatus" src={okPapug} />
-            )}
-            {status === Status.wrong && (
-              <img className="papugStatus" src={neOkPapug} />
-            )}
-          </GridItem>
+          <PapugStatus />
           {stage < 3 && (
             <GridItem
               position={{ colStart: 10, colEnd: 13, rowStart: 3, rowEnd: 6 }}
@@ -107,8 +101,8 @@ export const Game1 = () => {
           {correctItems.map((itemIndex, index) => {
             const { src } = elements[itemIndex];
             return (
-              <GridItem position={basketPositions[index]}>
-                <img src={src} />
+              <GridItem key={src} position={basketPositions[index]}>
+                <img src={src} className="imgBorder" />
               </GridItem>
             );
           })}

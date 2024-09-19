@@ -13,7 +13,9 @@ import { Status, TContext } from "./types";
 
 const clickAudio: HTMLAudioElement = new Audio(clickAudioUrl);
 const wrongAudio: HTMLAudioElement = new Audio(wrongAudioUrl);
+wrongAudio.volume = 0.4;
 const correctAudio: HTMLAudioElement = new Audio(correctAudioUrl);
+correctAudio.volume = 0.4;
 
 export const Context = createContext<TContext>({
   currentPage: <StartPage />,
@@ -35,10 +37,15 @@ export const ContextProvider: FC<{ children: JSX.Element }> = ({
   children,
 }) => {
   const [currentPage, setCurrentPage] = useState<number>(0);
-  const [volume, setVolume] = useState<number>(30);
+  const [volume, setVolume] = useState<number>(0);
   const [prevVolume, setPrevVolume] = useState<number>(0);
   const [status, setStatus] = useState<Status>(Status.whait);
   const timer = useRef<number | null>(null);
+
+  const setPageHandler = (pageIndex: number) => {
+    setStatus(Status.whait);
+    setCurrentPage(pageIndex);
+  };
 
   const setVolumeHandler = (newVolume: number) => {
     setPrevVolume(volume);
@@ -78,7 +85,7 @@ export const ContextProvider: FC<{ children: JSX.Element }> = ({
       value={{
         currentPage: pages[currentPage],
         currentPageIndex: currentPage,
-        setCurrentPage,
+        setCurrentPage: setPageHandler,
         volume,
         prevVolume,
         setVolume: setVolumeHandler,

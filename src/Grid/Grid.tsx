@@ -2,7 +2,7 @@ import { FC } from "react";
 import "./Grid.css";
 
 type TGrid = {
-  children: JSX.Element;
+  children: React.ReactNode;
 };
 
 export const Grid: FC<TGrid> = ({ children }) => {

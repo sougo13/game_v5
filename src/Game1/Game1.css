@@ -28,24 +28,6 @@
   right: 0;
 }
 
-.checkedElement {
-  animation: 1s fadeOut;
-  animation-fill-mode: forwards;
-
-  visibility: visible;
-}
-
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    visibility: hidden;
-    opacity: 0;
-  }
-}
 
 .papugStatus {
   animation: 0.5s fadeIn;
