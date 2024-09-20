@@ -12,19 +12,19 @@ export const Menu = () => {
   return (
     <div className="menuContainer">
       <div className="menuItem" onClick={() => clickHandler(2)}>
-        Game 1
+        Корзинки овощей и фруктов
       </div>
       <div className="menuItem" onClick={() => clickHandler(3)}>
-        Game 2
+        Что лишнее?
       </div>
       <div className="menuItem" onClick={() => clickHandler(4)}>
-        Game 3
+        Скажи наоборот
       </div>
       <div className="menuItem" onClick={() => clickHandler(5)}>
-        Game 4
+        Предлоги
       </div>
       <div className="menuItem" onClick={() => clickHandler(6)}>
-        Game 5
+        Кто, что ест?
       </div>
     </div>
   );

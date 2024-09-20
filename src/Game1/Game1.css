@@ -23,7 +23,7 @@
 .nextBtn {
   position: absolute;
   height: 200px;
-    cursor: url('../assets/cursorPointer.png'), pointer;
+    cursor: url('../assets/cursorPointer.png') 15 0, pointer;
   top: calc(50% - 200px);
   right: 0;
 }

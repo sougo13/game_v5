@@ -5,14 +5,16 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
 }
 
 .menuItem {
   color: white;
   font-size: 36px;
-    cursor: url('../assets/cursorPointer.png'), pointer;
-  width: 200px;
+  cursor: url('../assets/cursorPointer.png') 15 0, pointer;
+  min-width: 200px;
+  width: 50%;
+  padding: 16px;
   background-color: orange;
   border-radius: 10px;
   text-align: center;
