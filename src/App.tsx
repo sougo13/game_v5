@@ -2,7 +2,7 @@ import VolumeUp from "@mui/icons-material/VolumeUp";
 import VolumeDown from "@mui/icons-material/VolumeDown";
 import VolumeMute from "@mui/icons-material/VolumeOff";
 import Slider from "@mui/material/Slider";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import bgAudioUrl from "./assets/audio/bgAudio.mp3";
 import goToMenu from "./assets/goToMenu.png";
 import { Context } from "./Context";
@@ -17,6 +17,7 @@ bgAudio.preload = "auto";
 
 function App() {
   const {
+    title,
     currentPage,
     setCurrentPage,
     volume,
@@ -67,6 +68,7 @@ function App() {
         {currentPageIndex > 1 && (
           <img src={goToMenu} className="goToMenuBtn" onClick={goToHomePage} />
         )}
+        <div className="mainTitle">{title}</div>
         <div className="volumeContainer">
           <div className="volumeButton" onClick={volumeBtnClick}>
             {renderVolumeBtn()}

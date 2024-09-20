@@ -31,63 +31,96 @@ export enum ElemType {
   veg,
 }
 
-const shuffle = <T>(array: T[]): T[] => {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-
-  return array;
-};
-
-export type TElemType = {
-  src: string;
-  type: ElemType;
-};
-
-export const getElements = (stage: number) => {
-  let fIndex = 0;
-  let fCount = 3;
-
-  let vIndex = 0;
-  let vCount = 2;
-
-  if (stage === 1) {
-    fIndex = 3;
-    fCount = 5;
-
-    vIndex = 2;
-    vCount = 5;
-  }
-
-  if (stage === 2) {
-    fIndex = 5;
-    fCount = 8;
-
-    vIndex = 5;
-    vCount = 7;
-  }
-
-  if (stage === 3) {
-    fIndex = 8;
-    fCount = 10;
-
-    vIndex = 7;
-    vCount = 10;
-  }
-
-  const fruits: TElemType[] = fruitsArr
-    .slice(fIndex, fCount)
-    .map((elem) => ({ src: elem, type: ElemType.fruit }));
-
-  const vegs: TElemType[] = vegArr
-    .slice(vIndex, vCount)
-    .map((elem) => ({ src: elem, type: ElemType.veg }));
-
-  const res: TElemType[] = shuffle([...fruits, ...vegs]);
-
-  return res;
-};
+export const elements = [
+  [
+    {
+      src: fruit1,
+      type: ElemType.fruit,
+    },
+    {
+      src: fruit2,
+      type: ElemType.fruit,
+    },
+    {
+      src: veg1,
+      type: ElemType.veg,
+    },
+    {
+      src: veg2,
+      type: ElemType.veg,
+    },
+    {
+      src: veg3,
+      type: ElemType.veg,
+    },
+  ],
+  [
+    {
+      src: fruit3,
+      type: ElemType.fruit,
+    },
+    {
+      src: fruit4,
+      type: ElemType.fruit,
+    },
+    {
+      src: fruit5,
+      type: ElemType.fruit,
+    },
+    {
+      src: veg4,
+      type: ElemType.veg,
+    },
+    {
+      src: veg5,
+      type: ElemType.veg,
+    },
+  ],
+  [
+    {
+      src: fruit6,
+      type: ElemType.fruit,
+    },
+    {
+      src: fruit7,
+      type: ElemType.fruit,
+    },
+    {
+      src: veg6,
+      type: ElemType.veg,
+    },
+    {
+      src: veg7,
+      type: ElemType.veg,
+    },
+    {
+      src: veg8,
+      type: ElemType.veg,
+    },
+  ],
+  [
+    {
+      src: fruit8,
+      type: ElemType.fruit,
+    },
+    {
+      src: fruit9,
+      type: ElemType.fruit,
+    },
+    {
+      src: fruit10,
+      type: ElemType.fruit,
+    },
+    {
+      src: veg9,
+      type: ElemType.veg,
+    },
+    {
+      src: veg10,
+      type: ElemType.veg,
+    },
+  ],
+];
 
 export const fruitsArr = [
   fruit1,

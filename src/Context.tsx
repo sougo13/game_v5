@@ -18,6 +18,8 @@ const correctAudio: HTMLAudioElement = new Audio(correctAudioUrl);
 correctAudio.volume = 0.4;
 
 export const Context = createContext<TContext>({
+  title: "",
+  setTitle: () => {},
   currentPage: <StartPage />,
   currentPageIndex: 0,
   setCurrentPage: () => {},
@@ -36,6 +38,7 @@ const time = 3000;
 export const ContextProvider: FC<{ children: JSX.Element }> = ({
   children,
 }) => {
+  const [title, setTitle] = useState<string>("");
   const [currentPage, setCurrentPage] = useState<number>(0);
   const [volume, setVolume] = useState<number>(0);
   const [prevVolume, setPrevVolume] = useState<number>(0);
@@ -83,6 +86,8 @@ export const ContextProvider: FC<{ children: JSX.Element }> = ({
   return (
     <Context.Provider
       value={{
+        title,
+        setTitle,
         currentPage: pages[currentPage],
         currentPageIndex: currentPage,
         setCurrentPage: setPageHandler,

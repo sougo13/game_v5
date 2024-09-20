@@ -5,6 +5,8 @@ export enum Status {
 }
 
 export type TContext = {
+  title: string;
+  setTitle: (title: string) => void;
   currentPage: JSX.Element;
   currentPageIndex: number;
   setCurrentPage: (newPage: number) => void;

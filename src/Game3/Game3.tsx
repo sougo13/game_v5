@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Game3.css";
 import { Grid, GridItem } from "../Grid/Grid";
 import { PapugStatus } from "../PapugStatus/PapugStatus";
@@ -8,7 +8,11 @@ import { NextButton } from "../NextButton/NextButton";
 import { Status } from "../types";
 
 export const Game3 = () => {
-  const { setStatus, onClickAudio } = useContext(Context);
+  const { setStatus, onClickAudio, setTitle } = useContext(Context);
+
+  useEffect(() => {
+    setTitle("Скажи наоборот");
+  }, []);
 
   const [stage, setStage] = useState<number>(0);
   const [clickedItems, setClickedItems] = useState<number[]>([]);

@@ -94,6 +94,18 @@ th {
   cursor: url('../assets/cursorPointer.png') 15 0, pointer;
 }
 
+.border {
+  border-radius: 20px;
+  border: 5px solid #efb159c9;
+}
+
+.greenBorder {
+  transition: 1s;
+  transform: scale(1.2);
+  border-radius: 20px;
+  border: 5px solid #00a500c9;
+}
+
 .pointer {
   cursor: url('../assets/cursorPointer.png') 15 0, pointer;
 }

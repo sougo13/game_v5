@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Game5.css";
 import { Context } from "../Context";
 import { Status } from "../types";
@@ -8,10 +8,14 @@ import { PapugStatus } from "../PapugStatus/PapugStatus";
 import { photos } from "./const";
 
 export const Game5 = () => {
-  const { setStatus, onClickAudio } = useContext(Context);
+  const { setStatus, onClickAudio, setTitle } = useContext(Context);
 
   const [stage, setStage] = useState<number>(0);
   const [checked, setChecked] = useState<boolean>(false);
+
+  useEffect(() => {
+    setTitle("Кто, что ест?");
+  }, []);
 
   const nextStageHandler = () => {
     onClickAudio();
@@ -51,7 +55,7 @@ export const Game5 = () => {
           <img src={animal} />
         </GridItem>
         {food.map(({ src, isCorrect }, i) => (
-          <GridItem position={positions[i]}>
+          <GridItem key={src} position={positions[i]}>
             <img
               className={
                 checked && !isCorrect

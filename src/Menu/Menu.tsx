@@ -1,9 +1,13 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Context } from "../Context";
 import "./Menu.css";
 
 export const Menu = () => {
-  const { setCurrentPage } = useContext(Context);
+  const { setCurrentPage, setTitle } = useContext(Context);
+
+  useEffect(() => {
+    setTitle("Остров с Говорушей!");
+  }, []);
 
   const clickHandler = (pageIndex: number) => {
     setCurrentPage(pageIndex);

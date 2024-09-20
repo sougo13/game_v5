@@ -1,7 +1,15 @@
+import { useContext, useEffect } from "react";
 import papug from "../assets/papug.webp";
 import "../styles/MainPage.css";
+import { Context } from "../Context";
 
 export const StartPage = () => {
+  const { setTitle } = useContext(Context);
+
+  useEffect(() => {
+    setTitle("Остров с Говорушей!");
+  }, []);
+
   return (
     <div className="papugContainer">
       <p className="speech">

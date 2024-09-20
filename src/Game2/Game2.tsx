@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Context } from "../Context";
 import { Grid, GridItem } from "../Grid/Grid";
 import { Status } from "../types";
@@ -8,10 +8,14 @@ import { PapugStatus } from "../PapugStatus/PapugStatus";
 import { NextButton } from "../NextButton/NextButton";
 
 export const Game2 = () => {
-  const { setStatus, onClickAudio } = useContext(Context);
+  const { setStatus, onClickAudio, setTitle } = useContext(Context);
 
   const [stage, setStage] = useState<number>(0);
   const [checked, setChecked] = useState<boolean>(false);
+
+  useEffect(() => {
+    setTitle("Что лишнее?");
+  }, []);
 
   const positions = [
     { colStart: 2, colEnd: 5, rowStart: 2, rowEnd: 6 },
