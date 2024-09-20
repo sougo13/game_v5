@@ -6,6 +6,7 @@ import { Grid, GridItem } from "../Grid/Grid";
 import { NextButton } from "../NextButton/NextButton";
 import { PapugStatus } from "../PapugStatus/PapugStatus";
 import { photos } from "./const";
+import { ManualButton } from "../Modal/ManualButton";
 
 export const Game5 = () => {
   const { setStatus, onClickAudio, setTitle } = useContext(Context);
@@ -71,6 +72,7 @@ export const Game5 = () => {
           <NextButton nextStageHandler={nextStageHandler} />
         )}
         <PapugStatus />
+        <ManualButton />
       </Grid>
     </div>
   );

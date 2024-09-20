@@ -2,12 +2,13 @@ import VolumeUp from "@mui/icons-material/VolumeUp";
 import VolumeDown from "@mui/icons-material/VolumeDown";
 import VolumeMute from "@mui/icons-material/VolumeOff";
 import Slider from "@mui/material/Slider";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import bgAudioUrl from "./assets/audio/bgAudio.mp3";
 import goToMenu from "./assets/goToMenu.png";
 import { Context } from "./Context";
 import "./styles/App.css";
 import "./styles/MainPage.css";
+import { Manual } from "./Modal/Manual";
 
 const bgAudio = new Audio(bgAudioUrl);
 bgAudio.loop = true;
@@ -49,7 +50,11 @@ function App() {
     if (volume !== 0) {
       setVolume(0);
     } else {
-      setVolume(prevVolume);
+      if (prevVolume === 0) {
+        setVolume(20);
+      } else {
+        setVolume(prevVolume);
+      }
     }
   };
 
@@ -77,6 +82,7 @@ function App() {
         </div>
       </div>
       <div className="mainArea">{currentPage}</div>
+      <Manual />
     </div>
   );
 }

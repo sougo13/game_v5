@@ -17,12 +17,14 @@ type TGridItem = {
     rowEnd: number;
   };
   children: React.ReactNode;
+  style?: React.CSSProperties;
 };
 
 export const GridItem: FC<TGridItem> = (props) => {
   const {
     children,
     position: { colEnd, colStart, rowEnd, rowStart },
+    style,
   } = props;
 
   return (
@@ -33,6 +35,7 @@ export const GridItem: FC<TGridItem> = (props) => {
         gridColumnEnd: colEnd,
         gridRowStart: rowStart,
         gridRowEnd: rowEnd,
+        ...style,
       }}
     >
       {children}

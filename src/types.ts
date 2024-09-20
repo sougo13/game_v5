@@ -5,6 +5,8 @@ export enum Status {
 }
 
 export type TContext = {
+  open: boolean;
+  setOpen: (open: boolean) => void;
   title: string;
   setTitle: (title: string) => void;
   currentPage: JSX.Element;

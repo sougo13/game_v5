@@ -6,6 +6,7 @@ import { Context } from "../Context";
 import { photos } from "./const";
 import { NextButton } from "../NextButton/NextButton";
 import { Status } from "../types";
+import { ManualButton } from "../Modal/ManualButton";
 
 export const Game3 = () => {
   const { setStatus, onClickAudio, setTitle } = useContext(Context);
@@ -67,6 +68,7 @@ export const Game3 = () => {
           <NextButton nextStageHandler={nextStageHandler} />
         )}
         <PapugStatus />
+        <ManualButton />
       </Grid>
     </div>
   );

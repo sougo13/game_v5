@@ -8,6 +8,7 @@ import { Context } from "../Context";
 import { Status } from "../types";
 import { PapugStatus } from "../PapugStatus/PapugStatus";
 import { NextButton } from "../NextButton/NextButton";
+import { ManualButton } from "../Modal/ManualButton";
 
 export const Game1 = () => {
   const { setStatus, onClickAudio, setTitle } = useContext(Context);
@@ -95,6 +96,7 @@ export const Game1 = () => {
             );
           })}
         </>
+        <ManualButton />
       </Grid>
     </div>
   );
