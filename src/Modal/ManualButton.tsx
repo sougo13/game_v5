@@ -9,6 +9,8 @@ export const ManualButton = () => {
   return (
     <GridItem
       position={{ colStart: 10, colEnd: 13, rowStart: 1, rowEnd: 2 }}
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      //@ts-ignore
       style={{ textAlign: "-webkit-right" }}
     >
       <button className="manualButton" onClick={handleOpen}>

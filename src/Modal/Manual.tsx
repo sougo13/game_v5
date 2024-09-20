@@ -1,5 +1,4 @@
-import React, { FC, useContext, useState } from "react";
-import { GridItem } from "../Grid/Grid";
+import React, { FC, useContext } from "react";
 import { Backdrop, Box, Fade, Modal, SxProps, Typography } from "@mui/material";
 import { texts } from "./ManualText";
 import { Context } from "../Context";
@@ -23,46 +22,37 @@ const style: SxProps = {
 export const Manual: FC = () => {
   const { title, currentPageIndex, open, setOpen } = useContext(Context);
 
-  const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   return (
-    <GridItem
-      position={{ colStart: 10, colEnd: 13, rowStart: 1, rowEnd: 2 }}
-      style={{ textAlign: "-webkit-right" }}
+    <Modal
+      aria-labelledby="transition-modal-title"
+      aria-describedby="transition-modal-description"
+      open={open}
+      onClose={handleClose}
+      closeAfterTransition
+      slots={{ backdrop: Backdrop }}
+      slotProps={{
+        backdrop: {
+          timeout: 500,
+        },
+      }}
     >
-      <button className="manualButton" onClick={handleOpen}>
-        Инструкция
-      </button>
-      <Modal
-        aria-labelledby="transition-modal-title"
-        aria-describedby="transition-modal-description"
-        open={open}
-        onClose={handleClose}
-        closeAfterTransition
-        slots={{ backdrop: Backdrop }}
-        slotProps={{
-          backdrop: {
-            timeout: 500,
-          },
-        }}
-      >
-        <Fade in={open}>
-          <Box sx={style}>
-            <Typography
-              variant="h6"
-              component="h2"
-              fontSize={24}
-              style={{ fontWeight: "bold", fontFamily: "cursive" }}
-            >
-              {title}
-            </Typography>
-            <Typography sx={{ mt: 2 }} fontSize={20}>
-              {texts[currentPageIndex]}
-            </Typography>
-          </Box>
-        </Fade>
-      </Modal>
-    </GridItem>
+      <Fade in={open}>
+        <Box sx={style}>
+          <Typography
+            variant="h6"
+            component="h2"
+            fontSize={24}
+            style={{ fontWeight: "bold", fontFamily: "cursive" }}
+          >
+            {title}
+          </Typography>
+          <Typography sx={{ mt: 2 }} fontSize={20}>
+            {texts[currentPageIndex]}
+          </Typography>
+        </Box>
+      </Fade>
+    </Modal>
   );
 };
