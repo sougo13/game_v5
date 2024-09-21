@@ -9,6 +9,7 @@ import { Context } from "./Context";
 import "./styles/App.css";
 import "./styles/MainPage.css";
 import { Manual } from "./Modal/Manual";
+import { bg } from "./bgConst";
 
 const bgAudio = new Audio(bgAudioUrl);
 bgAudio.loop = true;
@@ -63,27 +64,45 @@ function App() {
   };
 
   return (
-    <div className="mainPageContainer">
-      <div className="mainHeader">
-        {currentPageIndex === 0 && (
-          <button className="starButton" role="button" onClick={onClickHandler}>
-            Вперед!
-          </button>
-        )}
-        {currentPageIndex > 1 && (
-          <img src={goToMenu} className="goToMenuBtn" onClick={goToHomePage} />
-        )}
-        <div className="mainTitle">{title}</div>
-        <div className="volumeContainer">
-          <div className="volumeButton" onClick={volumeBtnClick}>
-            {renderVolumeBtn()}
+    <>
+      <div
+        className="background"
+        style={{ backgroundImage: `url(${bg[currentPageIndex]})` }}
+      />
+      <div className="mainPageContainer">
+        <div className="mainHeader">
+          {currentPageIndex === 0 && (
+            <button
+              className="starButton"
+              role="button"
+              onClick={onClickHandler}
+            >
+              Вперед!
+            </button>
+          )}
+          {currentPageIndex > 1 && (
+            <img
+              src={goToMenu}
+              className="goToMenuBtn"
+              onClick={goToHomePage}
+            />
+          )}
+          <div className="mainTitle">{title}</div>
+          <div className="volumeContainer">
+            <div className="volumeButton" onClick={volumeBtnClick}>
+              {renderVolumeBtn()}
+            </div>
+            <Slider className="slider" value={volume} onChange={handleChange} />
           </div>
-          <Slider className="slider" value={volume} onChange={handleChange} />
+        </div>
+        <div className="mainArea">{currentPage}</div>
+        <Manual />
+        <div className="footer">
+          Автор игры: учитель-логопед Ковязина Светлана Евгеньевна <br /> МАДОУ
+          «Детский сад №390» г. Перми
         </div>
       </div>
-      <div className="mainArea">{currentPage}</div>
-      <Manual />
-    </div>
+    </>
   );
 }
 

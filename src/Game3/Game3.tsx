@@ -7,6 +7,7 @@ import { photos } from "./const";
 import { NextButton } from "../NextButton/NextButton";
 import { Status } from "../types";
 import { ManualButton } from "../Modal/ManualButton";
+import papug from "../assets/papug.webp";
 
 export const Game3 = () => {
   const { setStatus, onClickAudio, setTitle } = useContext(Context);
@@ -50,7 +51,7 @@ export const Game3 = () => {
         {photos[stage]?.map(({ src1, src2 }, i) => (
           <>
             <GridItem key={src1} position={positions[i][0]}>
-              <img className={"imgBorder"} src={src1} />
+              <img className={"imgBorder noPointer"} src={src1} />
             </GridItem>
             <GridItem key={src2} position={positions[i][1]}>
               {!clickedItems.includes(i) ? (
@@ -59,7 +60,7 @@ export const Game3 = () => {
                   onClick={() => setClickedItems((prev) => [...prev, i])}
                 />
               ) : (
-                <img className={"imgBorder scale"} src={src2} />
+                <img className={"imgBorder scale anime"} src={src2} />
               )}
             </GridItem>
           </>
@@ -69,6 +70,11 @@ export const Game3 = () => {
         )}
         <PapugStatus />
         <ManualButton />
+        <GridItem
+          position={{ colStart: 10, colEnd: 13, rowStart: 6, rowEnd: 13 }}
+        >
+          <img className="papugStatus" src={papug} />
+        </GridItem>
       </Grid>
     </div>
   );

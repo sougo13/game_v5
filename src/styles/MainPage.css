@@ -1,8 +1,20 @@
+.background {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  overflow: hidden;
+  opacity: 0.6;
+}
+
 .mainPageContainer {
   width: 100vw;
   height: 100vh;
   position: relative;
-  background-image: url('../assets/mainBg.webp');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -12,12 +24,12 @@
 p.speech {
   position: absolute;
   top: -200px;
-  left: 40%;
-  line-height: 30px;
-  font-size: 20px;
+  left: 60%;
+  line-height: 35px;
+  font-size: 30px;
   display: flex;
   align-items: center;
-  width: 400px;
+  width: 550px;
   height: 200px;
   text-align: center;
   background-color: #ffffffab;
@@ -27,6 +39,7 @@ p.speech {
   -webkit-box-shadow: 2px 2px 4px #888;
   -moz-box-shadow: 2px 2px 4px #888;
   box-shadow: 2px 2px 4px #888;
+  padding: 0 10px;
 }
 
 p.speech:before {
@@ -60,7 +73,9 @@ p.speech:after {
 }
 
 .papug {
-  height: 100%;
+  height: 130%;
+  max-height: 130%;
+  transform: translate(0, -23%);
 }
 
 /* CSS */
@@ -162,12 +177,13 @@ p.speech:after {
 }
 
 .mainTitle {
+  line-height: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
   color: #f09819;
-  font-size: 46px;
+  font-size: 70px;
   width: calc(100% - 500px);
   text-shadow: 2px 0 2px #000,
     0 2px 2px #000,

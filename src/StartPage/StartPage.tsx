@@ -7,7 +7,7 @@ export const StartPage = () => {
   const { setTitle } = useContext(Context);
 
   useEffect(() => {
-    setTitle("Остров с Говорушей!");
+    setTitle("Остров с Говорушей");
   }, []);
 
   return (

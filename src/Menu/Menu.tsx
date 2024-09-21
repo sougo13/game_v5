@@ -1,13 +1,12 @@
 import { useContext, useEffect } from "react";
 import { Context } from "../Context";
 import "./Menu.css";
-import { Manual } from "../Modal/Manual";
 
 export const Menu = () => {
   const { setCurrentPage, setTitle, setOpen } = useContext(Context);
 
   useEffect(() => {
-    setTitle("Остров с Говорушей!");
+    setTitle("Остров с Говорушей");
   }, []);
 
   const clickHandler = (pageIndex: number) => {
@@ -16,7 +15,7 @@ export const Menu = () => {
 
   return (
     <div className="menuContainer">
-      <div className="menuItem manual" onClick={() => setOpen(true)}>
+      <div className="manualItem manual" onClick={() => setOpen(true)}>
         Инструкция
       </div>
       <div className="gamesContainer">

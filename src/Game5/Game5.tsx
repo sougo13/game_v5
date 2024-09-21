@@ -53,7 +53,7 @@ export const Game5 = () => {
         <GridItem
           position={{ colStart: 1, colEnd: 4, rowStart: 1, rowEnd: 13 }}
         >
-          <img src={animal} />
+          <img src={animal} className="imgBorder noPointer" />
         </GridItem>
         {food.map(({ src, isCorrect }, i) => (
           <GridItem key={src} position={positions[i]}>

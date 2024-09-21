@@ -4,6 +4,7 @@ import { Status } from "../types";
 import { Context } from "../Context";
 import okPapug from "../assets/okPapug.png";
 import neOkPapug from "../assets/neOkPapug.png";
+import papug from "../assets/papug.webp";
 import "./PapugStatus.css";
 
 export const PapugStatus = () => {
@@ -16,6 +17,7 @@ export const PapugStatus = () => {
       {status === Status.wrong && (
         <img className="papugStatus" src={neOkPapug} />
       )}
+      {status === Status.whait && <img className="papugStatus" src={papug} />}
     </GridItem>
   );
 };
