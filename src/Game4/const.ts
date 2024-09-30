@@ -27,6 +27,7 @@ import photo666 from "../assets/Game4/666.png";
 export const photos = [
   {
     predlog: predlog1,
+    text: "На",
     items: [
       {
         src: photo1,
@@ -56,6 +57,7 @@ export const photos = [
   },
   {
     predlog: predlog2,
+    text: "В",
     items: [
       {
         src: photo666,
@@ -85,6 +87,7 @@ export const photos = [
   },
   {
     predlog: predlog3,
+    text: "Над",
     items: [
       {
         src: photo2222,
@@ -114,6 +117,7 @@ export const photos = [
   },
   {
     predlog: predlog4,
+    text: "Между",
     items: [
       {
         src: photo33,
@@ -143,6 +147,7 @@ export const photos = [
   },
   {
     predlog: predlog5,
+    text: "За",
     items: [
       {
         src: photo6,
@@ -172,6 +177,7 @@ export const photos = [
   },
   {
     predlog: predlog6,
+    text: "Под",
     items: [
       {
         src: photo66,

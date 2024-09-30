@@ -47,13 +47,16 @@ export const Game4 = () => {
     { colStart: 8, colEnd: 10, rowStart: 9, rowEnd: 12 },
   ];
 
-  const { predlog, items } = photos[stage];
+  const { predlog, items, text } = photos[stage];
 
   return (
     <div className="game1Container">
       <Grid>
         <GridItem position={{ colStart: 5, colEnd: 7, rowStart: 1, rowEnd: 4 }}>
-          <img src={predlog} className="border" />
+          <div className="col">
+            <img src={predlog} className="border" />
+            {text}
+          </div>
         </GridItem>
         {items.map(({ src, isCorrect }, i) => (
           <GridItem key={src} position={positions[i]}>

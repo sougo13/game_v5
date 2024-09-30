@@ -8,7 +8,7 @@
   background-repeat: no-repeat;
   background-position: center center;
   overflow: hidden;
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 .mainPageContainer {
@@ -122,6 +122,10 @@ p.speech:after {
   min-width: 200px;
   max-width: 300px;
   cursor: url('../assets/cursorPointer.png'), pointer !important;
+  padding: 5px;
+  background-color: rgba(165, 42, 42, 0.74);
+  border: 1px solid #F09819;
+  border-radius: 15px;
 }
 
 .volumeButton {

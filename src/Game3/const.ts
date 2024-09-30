@@ -27,36 +27,52 @@ export const photos = [
     {
       src1: p1,
       src2: p11,
+      text1: "Большое",
+      text2: "Маленькое",
     },
     {
       src1: p2,
       src2: p22,
+      text1: "Грустная",
+      text2: "Веселая",
     },
     {
       src1: p3,
       src2: p33,
+      text1: "Старая",
+      text2: "Новая",
     },
     {
       src1: p4,
       src2: p44,
+      text1: "Тепло",
+      text2: "Холодно",
     },
   ],
   [
     {
       src1: p5,
       src2: p55,
+      text1: "Лежит",
+      text2: "Стоит",
     },
     {
       src1: p6,
       src2: p66,
+      text1: "Сухая",
+      text2: "Мокрая",
     },
     {
       src1: p7,
       src2: p77,
+      text1: "День",
+      text2: "Ночь",
     },
     {
       src1: p8,
       src2: p88,
+      text1: "Грязная",
+      text2: "Чистая",
     },
   ],
 ];

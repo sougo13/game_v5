@@ -156,4 +156,13 @@ th {
   left: 0;
   z-index: 1;
   border-radius: 15px;
+  font-size: 14px;
+}
+
+.closeButton {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 1.5em !important;
+  height: 1.5em !important;
 }

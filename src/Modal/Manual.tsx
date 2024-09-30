@@ -2,6 +2,7 @@ import React, { FC, useContext } from "react";
 import { Backdrop, Box, Fade, Modal, SxProps, Typography } from "@mui/material";
 import { texts } from "./ManualText";
 import { Context } from "../Context";
+import Close from "@mui/icons-material/Close";
 
 const style: SxProps = {
   position: "absolute",
@@ -40,6 +41,7 @@ export const Manual: FC = () => {
     >
       <Fade in={open}>
         <Box sx={style}>
+          <Close className="closeButton pointer" onClick={handleClose} />
           <Typography
             variant="h6"
             component="h2"

@@ -1,6 +1,7 @@
 import { useContext, useEffect } from "react";
 import { Context } from "../Context";
 import "./Menu.css";
+import papug from "../assets/papug.webp";
 
 export const Menu = () => {
   const { setCurrentPage, setTitle, setOpen } = useContext(Context);
@@ -35,6 +36,7 @@ export const Menu = () => {
           Кто, что ест?
         </div>
       </div>
+      <img className="papugMenu" src={papug} />
     </div>
   );
 };

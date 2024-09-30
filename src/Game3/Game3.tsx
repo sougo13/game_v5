@@ -8,6 +8,7 @@ import { NextButton } from "../NextButton/NextButton";
 import { Status } from "../types";
 import { ManualButton } from "../Modal/ManualButton";
 import papug from "../assets/papug.webp";
+import cardBg from "../assets/Game3/cardBg.png";
 
 export const Game3 = () => {
   const { setStatus, onClickAudio, setTitle } = useContext(Context);
@@ -48,19 +49,27 @@ export const Game3 = () => {
   return (
     <div className="game1Container">
       <Grid>
-        {photos[stage]?.map(({ src1, src2 }, i) => (
+        {photos[stage]?.map(({ src1, src2, text1, text2 }, i) => (
           <>
             <GridItem key={src1} position={positions[i][0]}>
               <img className={"imgBorder noPointer"} src={src1} />
+              {text1}
             </GridItem>
             <GridItem key={src2} position={positions[i][1]}>
               {!clickedItems.includes(i) ? (
-                <img
-                  className={"imgBorder scale hidden"}
-                  onClick={() => setClickedItems((prev) => [...prev, i])}
-                />
+                <div className="scale">
+                  <img
+                    src={cardBg}
+                    className={"imgBorder hidden"}
+                    onClick={() => setClickedItems((prev) => [...prev, i])}
+                  />
+                  {text2.split("").map(() => "*")}
+                </div>
               ) : (
-                <img className={"imgBorder scale anime"} src={src2} />
+                <>
+                  <img className={"imgBorder anime"} src={src2} />
+                  <div className="anime">{text2}</div>
+                </>
               )}
             </GridItem>
           </>
