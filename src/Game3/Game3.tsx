@@ -47,13 +47,15 @@ export const Game3 = () => {
   ];
 
   return (
-    <div className="game1Container">
+    <div className="game3Container">
       <Grid>
         {photos[stage]?.map(({ src1, src2, text1, text2 }, i) => (
           <>
             <GridItem key={src1} position={positions[i][0]}>
-              <img className={"imgBorder noPointer"} src={src1} />
-              {text1}
+              <div className="imgContainerWithText">
+                <img className={"imgBorder noPointer"} src={src1} />
+                <div className="textBlock">{text1}</div>
+              </div>
             </GridItem>
             <GridItem key={src2} position={positions[i][1]}>
               {!clickedItems.includes(i) ? (
@@ -63,16 +65,17 @@ export const Game3 = () => {
                     className={"imgBorder hidden"}
                     onClick={() => setClickedItems((prev) => [...prev, i])}
                   />
-                  {text2
-                    .split("")
-                    .map(() => "*")
-                    .join("")}
+                  <div className="textBlock">
+                    {text2.split("").map(() => (
+                      <wbr />
+                    ))}
+                  </div>
                 </div>
               ) : (
-                <>
+                <div className="imgContainerWithText">
                   <img className={"imgBorder anime"} src={src2} />
-                  <div className="anime">{text2}</div>
-                </>
+                  <div className="anime textBlock">{text2}</div>
+                </div>
               )}
             </GridItem>
           </>
