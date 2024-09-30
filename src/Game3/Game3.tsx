@@ -57,13 +57,16 @@ export const Game3 = () => {
             </GridItem>
             <GridItem key={src2} position={positions[i][1]}>
               {!clickedItems.includes(i) ? (
-                <div className="scale">
+                <div className="scale imgContainerWithText">
                   <img
                     src={cardBg}
                     className={"imgBorder hidden"}
                     onClick={() => setClickedItems((prev) => [...prev, i])}
                   />
-                  {text2.split("").map(() => "*")}
+                  {text2
+                    .split("")
+                    .map(() => "*")
+                    .join("")}
                 </div>
               ) : (
                 <>
