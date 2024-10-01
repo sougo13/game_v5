@@ -106,7 +106,7 @@ export const photos = [
   [
     { src: p10, isCorrect: false },
     { src: p1010, isCorrect: false },
-    { src: p101010, isCorrect: false },
-    { src: p10101010, isCorrect: true },
+    { src: p101010, isCorrect: true },
+    { src: p10101010, isCorrect: false },
   ],
 ];
