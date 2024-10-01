@@ -9,7 +9,8 @@ import { photos } from "./const";
 import { ManualButton } from "../Modal/ManualButton";
 
 export const Game5 = () => {
-  const { setStatus, onClickAudio, setTitle } = useContext(Context);
+  const { setStatus, onClickAudio, setTitle, setCurrentPage } =
+    useContext(Context);
 
   const [stage, setStage] = useState<number>(0);
   const [checked, setChecked] = useState<boolean>(false);
@@ -17,6 +18,14 @@ export const Game5 = () => {
   useEffect(() => {
     setTitle("Кто, что ест?");
   }, []);
+
+  useEffect(() => {
+    if (!photos[stage + 1] && checked) {
+      setTimeout(() => {
+        setCurrentPage(7);
+      }, 2000);
+    }
+  }, [stage, checked]);
 
   const nextStageHandler = () => {
     onClickAudio();
@@ -53,11 +62,22 @@ export const Game5 = () => {
         <GridItem
           position={{ colStart: 1, colEnd: 4, rowStart: 1, rowEnd: 13 }}
         >
-          <img src={animal} className="imgBorder noPointer" />
+          <img
+            loading="eager"
+            onLoad={() => {
+              console.log("onLoad");
+            }}
+            onLoadStart={() => {
+              console.log("onLoadStart");
+            }}
+            src={animal}
+            className="imgBorder noPointer"
+          />
         </GridItem>
         {food.map(({ src, isCorrect }, i) => (
           <GridItem key={src} position={positions[i]}>
             <img
+              loading="eager"
               className={
                 checked && !isCorrect
                   ? "imgBorder filter noPointer"

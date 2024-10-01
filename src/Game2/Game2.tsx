@@ -9,7 +9,8 @@ import { NextButton } from "../NextButton/NextButton";
 import { ManualButton } from "../Modal/ManualButton";
 
 export const Game2 = () => {
-  const { setStatus, onClickAudio, setTitle } = useContext(Context);
+  const { setStatus, onClickAudio, setTitle, setCurrentPage } =
+    useContext(Context);
 
   const [stage, setStage] = useState<number>(0);
   const [checked, setChecked] = useState<boolean>(false);
@@ -17,6 +18,14 @@ export const Game2 = () => {
   useEffect(() => {
     setTitle("Что лишнее?");
   }, []);
+
+  useEffect(() => {
+    if (!photos[stage + 1] && checked) {
+      setTimeout(() => {
+        setCurrentPage(7);
+      }, 2000);
+    }
+  }, [stage, checked]);
 
   const positions = [
     { colStart: 2, colEnd: 5, rowStart: 2, rowEnd: 6 },

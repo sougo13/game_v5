@@ -10,6 +10,7 @@ import clickAudioUrl from "./assets/audio/click.mp3";
 import wrongAudioUrl from "./assets/audio/wrongAudio.mp3";
 import correctAudioUrl from "./assets/audio/correctAudio.mp3";
 import { Status, TContext } from "./types";
+import { Surprise } from "./Surprise/Surprise";
 
 const clickAudio: HTMLAudioElement = new Audio(clickAudioUrl);
 const wrongAudio: HTMLAudioElement = new Audio(wrongAudioUrl);
@@ -84,6 +85,7 @@ export const ContextProvider: FC<{ children: JSX.Element }> = ({
     <Game3 />,
     <Game4 />,
     <Game5 />,
+    <Surprise />,
   ];
 
   return (

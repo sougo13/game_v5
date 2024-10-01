@@ -8,8 +8,6 @@ import fruit7 from "../assets/Game1/friuits/7.png";
 import fruit8 from "../assets/Game1/friuits/8.png";
 import fruit9 from "../assets/Game1/friuits/9.png";
 import fruit10 from "../assets/Game1/friuits/10.png";
-import fruit11 from "../assets/Game1/friuits/11.png";
-import fruit12 from "../assets/Game1/friuits/12.png";
 
 import veg1 from "../assets/Game1/vegetables/1.png";
 import veg2 from "../assets/Game1/vegetables/2.png";
@@ -21,10 +19,6 @@ import veg7 from "../assets/Game1/vegetables/7.png";
 import veg8 from "../assets/Game1/vegetables/8.png";
 import veg9 from "../assets/Game1/vegetables/9.png";
 import veg10 from "../assets/Game1/vegetables/10.png";
-import veg11 from "../assets/Game1/vegetables/11.png";
-import veg12 from "../assets/Game1/vegetables/12.png";
-import veg13 from "../assets/Game1/vegetables/13.png";
-import veg14 from "../assets/Game1/vegetables/14.png";
 
 export enum ElemType {
   fruit,
@@ -120,36 +114,4 @@ export const elements = [
       type: ElemType.veg,
     },
   ],
-];
-
-export const fruitsArr = [
-  fruit1,
-  fruit2,
-  fruit3,
-  fruit4,
-  fruit5,
-  fruit6,
-  fruit7,
-  fruit8,
-  fruit9,
-  fruit10,
-  fruit11,
-  fruit12,
-];
-
-export const vegArr = [
-  veg1,
-  veg2,
-  veg3,
-  veg4,
-  veg5,
-  veg6,
-  veg7,
-  veg8,
-  veg9,
-  veg10,
-  veg11,
-  veg12,
-  veg13,
-  veg14,
 ];

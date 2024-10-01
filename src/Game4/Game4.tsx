@@ -55,7 +55,7 @@ export const Game4 = () => {
         <GridItem position={{ colStart: 5, colEnd: 7, rowStart: 1, rowEnd: 4 }}>
           <div className="col">
             <img src={predlog} className="border" />
-            {text}
+            <div className="textBlock">{text}</div>
           </div>
         </GridItem>
         {items.map(({ src, isCorrect }, i) => (

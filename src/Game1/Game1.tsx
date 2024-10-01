@@ -11,7 +11,8 @@ import { NextButton } from "../NextButton/NextButton";
 import { ManualButton } from "../Modal/ManualButton";
 
 export const Game1 = () => {
-  const { setStatus, onClickAudio, setTitle } = useContext(Context);
+  const { setStatus, onClickAudio, setTitle, setCurrentPage } =
+    useContext(Context);
 
   const [stage, setStage] = useState<number>(0);
   const [selectedItems, setSelectedItems] = useState<number[]>([]);
@@ -24,6 +25,14 @@ export const Game1 = () => {
   useEffect(() => {
     setTitle("Корзинки овощей и фруктов");
   }, []);
+
+  useEffect(() => {
+    if (!elements[stage + 1] && correctItems.length === 3) {
+      setTimeout(() => {
+        setCurrentPage(7);
+      }, 2000);
+    }
+  }, [stage, correctItems]);
 
   const nextStageHandler = () => {
     onClickAudio();
